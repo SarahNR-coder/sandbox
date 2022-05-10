@@ -11,7 +11,7 @@
                     <p>Inscrivez vous dès maintenant</p>
                     <button v-show="signInButton" @click="showSignIn = true, signUpEntry = false, signInButton= false">Créez un compte</button>
                     <div v-show="showSignIn">
-                        <form action="" method="get" class="signInForm">
+                        <form action="" method="get" class="signInForm" v-on:submit.prevent= "welcomePage = false">
                             <div class="signInForm">
                                 <label for="email">Entrez votre email</label>
                                 <input type="email" name="email" id="email" required>
@@ -21,7 +21,7 @@
                                 <input type="password" name="password" id="password" required>
                             </div>
                             <div class="signInForm">
-                                <input type="submit" value="Inscription" @click="welcomePage = false">
+                                <input type="submit" value="Inscription" >
                             </div>
                         </form>
                     </div>
@@ -30,7 +30,7 @@
                     <p>Déjà membre ?</p>
                     <button v-show="signUpButton" @click = "showSignUp=true, signInEntry=false, signUpButton=false">Connectez-vous</button>
                     <div v-show="showSignUp">
-                        <form action="" method="get" class="signInForm">
+                        <form action="" method="get" class="signInForm" v-on:submit.prevent ="welcomePage = false">
                             <div class="signInForm">
                                 <label for="email">Entrez votre email</label>
                                 <input type="email" name="email" id="email" required>
@@ -40,7 +40,7 @@
                                 <input type="password" name="password" id="password" required>
                             </div>
                             <div class="signInForm">
-                                <input type="submit" value="Connection" @click="welcomePage = false">
+                                <input type="submit" value="Connexion">
                             </div>
                         </form>
                     </div>
