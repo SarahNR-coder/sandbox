@@ -11,8 +11,9 @@ export default{
 
 <template>
     <div id="app">
-      <WelcomePage/>
-      <p>Hello</p>
+      <div>
+        <WelcomePage/>
+      </div>
     </div>
 </template>
 
