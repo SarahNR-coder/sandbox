@@ -1,5 +1,5 @@
 <script>
-import WelcomePage from '../src/components/WelcomePage.vue'
+import WelcomePage from '../src/views/WelcomePage.vue'
 
 export default{
   name: 'App',

@@ -1,5 +1,5 @@
 <template>
-        <div v-show="welcomePage">
+        <div>
             <div class="presentation">
                 <img class="presentation__background" src="my-app/src/assets/icon.png" alt="logo Groupomania en arrière-plan"/>
                 <h1 class="presentation__title">Groupomania Network</h1>
@@ -11,7 +11,7 @@
                     <p>Inscrivez vous dès maintenant</p>
                     <button v-show="signInButton" @click="showSignIn = true, signUpEntry = false, signInButton= false">Créez un compte</button>
                     <div v-show="showSignIn">
-                        <form action="" method="get" class="signInForm" v-on:submit.prevent= "welcomePage = false">
+                        <form action="" method="get" class="signInForm">
                             <div class="signInForm">
                                 <label for="email">Entrez votre email</label>
                                 <input type="email" name="email" id="email" required>
@@ -21,7 +21,7 @@
                                 <input type="password" name="password" id="password" required>
                             </div>
                             <div class="signInForm">
-                                <input type="submit" value="Inscription" >
+                                <button type="submit" value="Inscription" ><router-link to="/"></router-link></button>
                             </div>
                         </form>
                     </div>
@@ -30,7 +30,7 @@
                     <p>Déjà membre ?</p>
                     <button v-show="signUpButton" @click = "showSignUp=true, signInEntry=false, signUpButton=false">Connectez-vous</button>
                     <div v-show="showSignUp">
-                        <form action="" method="get" class="signInForm" v-on:submit.prevent ="welcomePage = false">
+                        <form action="" method="get" class="signInForm">
                             <div class="signInForm">
                                 <label for="email">Entrez votre email</label>
                                 <input type="email" name="email" id="email" required>
@@ -40,7 +40,7 @@
                                 <input type="password" name="password" id="password" required>
                             </div>
                             <div class="signInForm">
-                                <input type="submit" value="Connexion">
+                                <button type="submit" value="Connexion"><router-link to="/"></router-link></button>
                             </div>
                         </form>
                     </div>
@@ -54,7 +54,6 @@ export default {
   name: 'WelcomePage',
   data() {
         return{
-        welcomePage: true,
         signInEntry: true,
         signUpEntry: true,
         signInButton: true,
